@@ -54,7 +54,7 @@ function parseRequestBody(req) {
 
 function serveStaticFile(req, res) {
   const requestedPath = req.url === "/" ? "/index.html" : req.url;
-  const safePath = path.normalize(decodeURIComponent(requestedPath)).replace(/^(..[/\])+/, "");
+  const safePath = path.normalize(decodeURIComponent(requestedPath)).replace(/^(\.\.[/\\])+/, "");
   const filePath = path.join(PUBLIC_DIR, safePath);
 
   if (!filePath.startsWith(PUBLIC_DIR)) {
