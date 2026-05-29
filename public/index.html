@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Full-Stack Registration Demo</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="registration-panel" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">HTML + CSS + JS + Node + PostgreSQL</p>
+          <h1 id="page-title">Register a Name</h1>
+          <p class="intro">
+            Type a name below. The browser sends it to the backend, the backend saves it in PostgreSQL,
+            then the page shows the saved registrations.
+          </p>
+        </div>
+        <form id="registration-form" class="form">
+          <label for="name">User name</label>
+          <div class="input-row">
+            <input id="name" name="name" type="text" minlength="2" maxlength="80" placeholder="Example: Asha" required>
+            <button type="submit">Register</button>
+          </div>
+        </form>
+        <p id="message" class="message" role="status"></p>
+      </section>
+      <section class="registrations" aria-labelledby="registrations-title">
+        <div class="section-header">
+          <h2 id="registrations-title">Recent Registrations</h2>
+          <button id="refresh-button" type="button">Refresh</button>
+        </div>
+        <ul id="users-list" class="users-list"></ul>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

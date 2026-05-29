@@ -1,0 +1,53 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f7f3;
+  --panel: #ffffff;
+  --text: #1d2a25;
+  --muted: #65736d;
+  --accent: #116a4c;
+  --accent-strong: #0b4b37;
+  --line: #d8e0dc;
+  --success: #0e6f48;
+  --error: #b3261e;
+}
+
+* { box-sizing: border-box; }
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(120deg, rgba(17, 106, 76, 0.08), transparent 34%), var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+button, input { font: inherit; }
+.app-shell { width: min(920px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0; display: grid; gap: 20px; }
+.registration-panel, .registrations { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 18px 50px rgba(26, 44, 37, 0.08); padding: 28px; }
+.eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+h1, h2, p { margin-top: 0; }
+h1 { margin-bottom: 12px; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1; }
+h2 { margin-bottom: 0; font-size: 1.2rem; }
+.intro { max-width: 680px; margin-bottom: 24px; color: var(--muted); line-height: 1.6; }
+.form { display: grid; gap: 8px; }
+label { font-weight: 700; }
+.input-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+input { min-width: 0; border: 1px solid var(--line); border-radius: 8px; padding: 13px 14px; color: var(--text); }
+input:focus { border-color: var(--accent); outline: 3px solid rgba(17, 106, 76, 0.16); }
+button { border: 0; border-radius: 8px; background: var(--accent); color: white; cursor: pointer; font-weight: 800; padding: 13px 18px; }
+button:hover { background: var(--accent-strong); }
+.message { min-height: 24px; margin: 18px 0 0; font-weight: 700; }
+.message.success { color: var(--success); }
+.message.error { color: var(--error); }
+.section-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.section-header button { background: #e7f0ec; color: var(--accent-strong); }
+.users-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.users-list li { display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.users-list strong { overflow-wrap: anywhere; }
+.users-list time { flex: 0 0 auto; color: var(--muted); font-size: 0.88rem; }
+.empty-state { color: var(--muted); }
+@media (max-width: 620px) {
+  .app-shell { width: min(100% - 24px, 920px); padding: 24px 0; }
+  .registration-panel, .registrations { padding: 20px; }
+  .input-row, .users-list li { grid-template-columns: 1fr; }
+  .input-row { display: grid; }
+  .section-header { align-items: stretch; flex-direction: column; }
+}
